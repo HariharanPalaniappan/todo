@@ -22,14 +22,15 @@ const addFunction = (e) => {
     alert("the task already exist");
     setTask("");
   }
+  else if((task.replace(/^\s+|\s+$/g,"")) === "" || task === undefined){
+    alert("Must Enter Task");
+  }
   else if(task !== undefined) {
     allTask(task);
     setTask("");
-  } else {
-      alert("Must Enter Task");
-  }
+  } 
 }
-const updateFunction = (value)=> {
+const updateFunction = ()=> {
   taskList[taskList.indexOf(prevEdit)] = edit;
   setTaskList(taskList);
   setEdit(undefined);
